@@ -3,7 +3,7 @@
 An interactive, data-driven web application designed to manage inventory, track product history, and streamline supply chain operations in real time. Built using **Python**, **Streamlit**, and **MySQL**, this application provides key operational metrics, automated inventory threshold tracking, and manual reorder controls.
 
 Demo Video:
-<img width="400" height="250" alt="inventory" src="https://github.com/user-attachments/assets/1de1d167-0c5f-4b24-9325-0b66b9eb16ef" />
+<img width="800" height="500" alt="inventory (1)" src="https://github.com/user-attachments/assets/963e444e-49d1-4bc1-b569-21697a18c30c" />
 ---
 try now: https://inventorydashboardandsqloperations.streamlit.app/
 
