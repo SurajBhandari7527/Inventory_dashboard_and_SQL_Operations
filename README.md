@@ -5,7 +5,11 @@ An interactive, data-driven web application designed to manage inventory, track 
 Demo Video:
 <img width="800" height="500" alt="inventory (1)" src="https://github.com/user-attachments/assets/963e444e-49d1-4bc1-b569-21697a18c30c" />
 ---
-try now: https://inventorydashboardandsqloperations.streamlit.app/
+
+
+# Try now: https://inventorydashboardandsqloperations.streamlit.app/
+
+
 
 ## 📋 Table of Contents
 - [Features](#-features)
