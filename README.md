@@ -1,11 +1,13 @@
-Here is the `README.md` file for your GitHub repository in a single copy-pasteable code block.
 
 ```markdown
 # 📦 Inventory and Supply Chain Management Dashboard
 
 An interactive, data-driven web application designed to manage inventory, track product history, and streamline supply chain operations in real time. Built using **Python**, **Streamlit**, and **MySQL**, this application provides key operational metrics, automated inventory threshold tracking, and manual reorder controls.
 
+Demo Video:
+<img width="400" height="250" alt="inventory" src="https://github.com/user-attachments/assets/1de1d167-0c5f-4b24-9325-0b66b9eb16ef" />
 ---
+try now: https://inventorydashboardandsqloperations.streamlit.app/
 
 ## 📋 Table of Contents
 - [Features](#-features)
@@ -51,7 +53,7 @@ An interactive, data-driven web application designed to manage inventory, track 
 * **Data Processing:** [Pandas](https://pandas.pydata.org/)
 * **Database:** [MySQL Database Server](https://www.mysql.com/)
 * **Database Connector:** `mysql-connector-python`
-* **Language:** Python 3.8+
+* **Language:** Python 3.14
 
 ---
 
@@ -60,10 +62,8 @@ An interactive, data-driven web application designed to manage inventory, track 
 ```text
 ├── backend_database.py   # Handles database connections, queries, and stored procedure calls
 ├── ui.py                 # Streamlit frontend application code & dashboard layout
-├── try.py                # Standalone script for prototyping search/filter features
-├── .streamlit/
-│   └── secrets.toml      # Configuration file for MySQL credentials (Git-ignored)
 └── README.md             # Project documentation
+└── requirements.txt             # all dependencies
 ```
 
 ---
@@ -164,15 +164,7 @@ Renders UI components dynamically via Streamlit.
 * **Metrics Cards:** Renders clean numerical blocks (`st.metric`) to highlight aggregate backend stats.
 * **Dynamic Forms:** Provides inputs (`st.text_input`, `st.selectbox`, `st.number_input`) to add products or create purchase orders.
 * **Data Frames:** Displays Pandas dataframes generated directly from dynamic SQL dictionary objects.
-
-### 3. `try.py` (Utility Script)
-A minimalistic helper script used for testing real-time Streamlit drop-down filtering logic independently from the database module.
-
 ---
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the issues tab if you want to contribute.
 
 ---
 
