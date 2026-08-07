@@ -9,7 +9,6 @@ def connect_to_db():
         password=st.secrets["mysql"]["password"],
         database=st.secrets["mysql"]["database"],
         port=int(st.secrets["mysql"]["port"]),
-        ssl_mode="REQUIRED"  # Enforces SSL required by Aiven
     )
 
 def basic_data(cursor):
