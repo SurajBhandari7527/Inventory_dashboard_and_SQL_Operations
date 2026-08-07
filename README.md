@@ -1,5 +1,3 @@
-
-```markdown
 # 📦 Inventory and Supply Chain Management Dashboard
 
 An interactive, data-driven web application designed to manage inventory, track product history, and streamline supply chain operations in real time. Built using **Python**, **Streamlit**, and **MySQL**, this application provides key operational metrics, automated inventory threshold tracking, and manual reorder controls.
