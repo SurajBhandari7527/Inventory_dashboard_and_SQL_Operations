@@ -108,26 +108,37 @@ def product_status(cursor,product_id):
     
     return row
 
-def products_shipment_history(cursor,product_id,filter):
-    
+def products_shipment_history(cursor, product_id, filter):
     if filter:
-        query="""  select distinct * from(SELECT  r.product_id as product_id, r.reorder_quantity as quantity, r.reorder_date as order_date, r.status FROM reorders as r
-        union all
-        select s.product_id as product_id,s.quantity_received as quantity, s.shipment_date as order_date, "Received" as status from shipments as s)
-        as t 
-        where t.product_id=%s and t.status="Ordered" order by t.order_date desc"""
-        params=(product_id,)
-        cursor.execute(query,params)
-        rows=cursor.fetchall()
+        query = """
+        SELECT DISTINCT * FROM (
+            SELECT r.product_id AS product_id, r.reorder_quantity AS quantity, r.reorder_date AS order_date, r.status 
+            FROM reorders AS r
+            UNION ALL
+            SELECT s.product_id AS product_id, s.quantity_received AS quantity, s.shipment_date AS order_date, 'Received' AS status 
+            FROM shipments AS s
+        ) AS t 
+        WHERE t.product_id = %s AND t.status = 'Ordered' 
+        ORDER BY t.order_date DESC
+        """
+        params = (product_id,)
+        cursor.execute(query, params)
+        rows = cursor.fetchall()
     else:
-        query="""  select distinct * from(SELECT  r.product_id as product_id, r.reorder_quantity as quantity, r.reorder_date as order_date, r.status FROM reorders as r
-        union all
-        select s.product_id as product_id,s.quantity_received as quantity, s.shipment_date as order_date, "Received" as status from shipments as s)
-        as t 
-        where t.product_id=%s order by t.order_date desc"""
-        params=(product_id,)
-        cursor.execute(query,params)
-        rows=cursor.fetchall()
+        query = """
+        SELECT DISTINCT * FROM (
+            SELECT r.product_id AS product_id, r.reorder_quantity AS quantity, r.reorder_date AS order_date, r.status 
+            FROM reorders AS r
+            UNION ALL
+            SELECT s.product_id AS product_id, s.quantity_received AS quantity, s.shipment_date AS order_date, 'Received' AS status 
+            FROM shipments AS s
+        ) AS t 
+        WHERE t.product_id = %s 
+        ORDER BY t.order_date DESC
+        """
+        params = (product_id,)
+        cursor.execute(query, params)
+        rows = cursor.fetchall()
         
     return rows
 
